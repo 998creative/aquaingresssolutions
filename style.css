@@ -18,6 +18,8 @@ Text Domain: aqua-ingress-solutions
   --line: #d5e0ee;
   --radius: 20px;
   --shadow: 0 20px 45px rgba(18, 38, 61, 0.12);
+  --container-max: 1180px;
+  --container-wide-max: 1320px;
 }
 
 * {
@@ -87,8 +89,29 @@ img {
 }
 
 .container {
-  width: min(1180px, 92vw);
+  width: min(var(--container-max), 92vw);
   margin: 0 auto;
+}
+
+.container-wide {
+  width: min(var(--container-wide-max), 95vw);
+  margin: 0 auto;
+}
+
+/* Hybrid layout: readable text blocks + wider visual sections */
+.systems > .container,
+.studies > .container,
+.testimonials > .container,
+.about-difference > .container,
+.about-accreditations > .container,
+.strata-work-with > .container,
+.positive-use-cases > .container,
+.positive-technologies > .container,
+.positive-benefits > .container,
+.torch-brands > .container,
+.injection-types > .container,
+.studies-archive > .container {
+  width: min(var(--container-wide-max), 95vw);
 }
 
 .section {
@@ -1887,6 +1910,22 @@ body.menu-open {
 }
 
 @media (max-width: 780px) {
+  .container-wide,
+  .systems > .container,
+  .studies > .container,
+  .testimonials > .container,
+  .about-difference > .container,
+  .about-accreditations > .container,
+  .strata-work-with > .container,
+  .positive-use-cases > .container,
+  .positive-technologies > .container,
+  .positive-benefits > .container,
+  .torch-brands > .container,
+  .injection-types > .container,
+  .studies-archive > .container {
+    width: min(var(--container-max), 92vw);
+  }
+
   .menu-toggle {
     display: block;
   }
