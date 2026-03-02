@@ -43,6 +43,14 @@ After this theme is active and pages are verified:
    - Remove unused Elementor templates from `Templates` post type.
    - Clear caches/CDN.
 
+## GitHub Push-To-Live Updater Plugin
+
+A companion plugin is included here:
+
+- `plugin/aqua-theme-github-updater/aqua-theme-github-updater.php`
+
+Install it on the live site to let WordPress pull theme updates directly from this GitHub repo.
+
 ## Notes
 
 - Header/footer/navigation are built directly in theme templates.
