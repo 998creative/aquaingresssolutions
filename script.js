@@ -8,6 +8,11 @@ const nextButton = document.getElementById("next-study");
 const testimonialsTrack = document.getElementById("testimonials-track");
 const prevTestimonialButton = document.getElementById("prev-testimonial");
 const nextTestimonialButton = document.getElementById("next-testimonial");
+const footerSections = Array.from(
+  document.querySelectorAll("[data-footer-section]")
+);
+const siteFooter = document.querySelector(".site-footer");
+const mobileFab = document.querySelector(".mobile-fab");
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
@@ -84,6 +89,43 @@ if (menuToggle && siteNav) {
       closeMenu();
     }
   });
+}
+
+const mobileFooterMedia = window.matchMedia("(max-width: 780px)");
+
+const syncFooterSections = () => {
+  if (!footerSections.length) return;
+
+  if (mobileFooterMedia.matches) {
+    footerSections.forEach((section, index) => {
+      section.open = index === 0;
+    });
+    return;
+  }
+
+  footerSections.forEach((section) => {
+    section.open = true;
+  });
+};
+
+syncFooterSections();
+if (typeof mobileFooterMedia.addEventListener === "function") {
+  mobileFooterMedia.addEventListener("change", syncFooterSections);
+} else if (typeof mobileFooterMedia.addListener === "function") {
+  mobileFooterMedia.addListener(syncFooterSections);
+}
+
+if (mobileFab && siteFooter && "IntersectionObserver" in window) {
+  const footerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        mobileFab.classList.toggle("is-hidden", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  footerObserver.observe(siteFooter);
 }
 
 const createAutoplayControls = (track, move, autoplayMs = 0) => {
