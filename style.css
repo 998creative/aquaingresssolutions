@@ -1564,6 +1564,10 @@ img {
   background-image: url("assets/images/PHOTO-2025-12-05-06-27-35.jpg");
 }
 
+.injection-quality-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .cta-banner {
   position: relative;
   padding: clamp(3rem, 7vw, 6rem) 0;
@@ -1816,6 +1820,10 @@ body.menu-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .injection-quality-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .strata-partner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1968,6 +1976,10 @@ body.menu-open {
   }
 
   .injection-app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .injection-quality-grid {
     grid-template-columns: 1fr;
   }
 

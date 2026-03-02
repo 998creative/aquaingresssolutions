@@ -185,7 +185,7 @@ get_header();
           <p>Controls and documentation to ensure consistent remedial outcomes.</p>
         </div>
 
-        <div class="feature-grid">
+        <div class="feature-grid injection-quality-grid">
           <article class="feature-card">
             <h3>Experienced Technicians</h3>
             <p>Applied by trained personnel experienced in resin injection systems.</p>
