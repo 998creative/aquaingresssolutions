@@ -2013,7 +2013,7 @@ body.menu-open {
     scrollbar-width: thin;
     gap: 0.9rem;
     padding-right: clamp(36px, 10vw, 92px);
-    padding-bottom: 1rem;
+    padding-bottom: 2.4rem;
     -webkit-mask-image: none;
     mask-image: none;
   }
