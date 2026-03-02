@@ -35,8 +35,8 @@ Text Domain: aqua-ingress-solutions
 @font-face {
   font-family: "Mont";
   src:
-    url("assets/fonts/mont/Mont-Black.woff2") format("woff2"),
-    url("assets/fonts/mont/Mont-Black.woff") format("woff");
+    url("assets/fonts/mont/Mont-Heavy.woff2") format("woff2"),
+    url("assets/fonts/mont/Mont-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
