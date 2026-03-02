@@ -9,7 +9,12 @@ get_header();
 ?>
 <main id="main-content">
   <?php while (have_posts()) : the_post(); ?>
-    <section class="hero case-study-hero">
+    <?php
+    $hero_image = has_post_thumbnail()
+        ? wp_get_attachment_image_url(get_post_thumbnail_id(), 'full')
+        : get_theme_file_uri('assets/images/waterproofing-7508362-scaled.jpg');
+    ?>
+    <section class="hero case-study-hero" style="background-image: url('<?php echo esc_url($hero_image); ?>');">
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
@@ -22,11 +27,6 @@ get_header();
 
     <section class="section case-study-content-wrap">
       <div class="container case-study-content">
-        <?php if (has_post_thumbnail()) : ?>
-          <figure class="case-study-featured">
-            <?php the_post_thumbnail('large'); ?>
-          </figure>
-        <?php endif; ?>
         <article class="entry-content">
           <?php the_content(); ?>
         </article>
