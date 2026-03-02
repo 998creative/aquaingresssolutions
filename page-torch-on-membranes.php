@@ -197,18 +197,30 @@ get_header();
 
         <div class="feature-grid">
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M96 32C43 32 0 75 0 128v256c0 53 43 96 96 96h448c53 0 96-43 96-96V128c0-53-43-96-96-96H96zm32 96h384v256H128V128zm64 48v160h256V176H192z"/></svg>
+            </span>
             <h3>Accredited Applicators</h3>
             <p>Installation completed by trained and approved membrane installers.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM192 384l-80-80 34-34 46 46 110-110 34 34-144 144z"/></svg>
+            </span>
             <h3>Specification Compliance</h3>
             <p>Strict adherence to manufacturer system and detailing requirements.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 48c114.9 0 208 93.1 208 208S370.9 464 256 464 48 370.9 48 256 141.1 48 256 48zm0 64c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm-32 64h64v80h80v64h-80v80h-64v-80h-80v-64h80v-80z"/></svg>
+            </span>
             <h3>Inspection and Testing</h3>
             <p>Quality checks completed prior to practical completion and handover.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M466.5 83.7l-192-80a48.1 48.1 0 0 0-36.9 0l-192 80A48 48 0 0 0 16 128c0 198.5 114.5 335.7 221.5 380.3a48 48 0 0 0 36.9 0C381.5 463.7 496 326.5 496 128a48 48 0 0 0-29.5-44.3zM256 446.3C162.3 399.7 83.5 290 80.1 138.6L256 65.3v381z"/></svg>
+            </span>
             <h3>Warranty Documentation</h3>
             <p>Warranty and system documentation provided on completion where applicable.</p>
           </article>
