@@ -79,7 +79,7 @@ get_header();
 
         <div class="systems-grid">
           <article class="system-card">
-            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/427124688_17867932056066458_2484616918545213933_n.jpg")); ?>" alt="Positive waterproofing system" loading="lazy" width="700" height="450">
+            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/stock/pexels-roof-maintenance.jpg")); ?>" alt="Positive waterproofing system" loading="lazy" width="700" height="450">
             <div class="system-content">
               <h3>Positive Waterproofing</h3>
               <p>External defence systems for rooftops, balconies, and exposed podium decks.</p>
@@ -88,7 +88,7 @@ get_header();
           </article>
 
           <article class="system-card">
-            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/465191560_17901068487066458_5940405231850142298_n-1.jpg")); ?>" alt="Negative waterproofing system" loading="lazy" width="700" height="450">
+            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/stock/pexels-underground-corridor.jpg")); ?>" alt="Negative waterproofing system" loading="lazy" width="700" height="450">
             <div class="system-content">
               <h3>Negative Waterproofing</h3>
               <p>Internal protection for basements, plant rooms, and inaccessible structures.</p>
@@ -97,7 +97,7 @@ get_header();
           </article>
 
           <article class="system-card">
-            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/473588673_122225153030149194_2905662229167176136_n.jpg")); ?>" alt="Torch-on membrane system" loading="lazy" width="700" height="450">
+            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/stock/pexels-blowtorch.jpg")); ?>" alt="Torch-on membrane system" loading="lazy" width="700" height="450">
             <div class="system-content">
               <h3>Torch-On Membranes</h3>
               <p>Trafficable, two-layer torch-on systems with up to 20-year warranty.</p>
@@ -106,7 +106,7 @@ get_header();
           </article>
 
           <article class="system-card">
-            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/460216956_17895039831066458_5989938758620367973_n.jpg")); ?>" alt="Injection waterproofing system" loading="lazy" width="700" height="450">
+            <img src="<?php echo esc_url(get_theme_file_uri("assets/images/stock/pexels-wall-repair-closeup.jpg")); ?>" alt="Injection waterproofing system" loading="lazy" width="700" height="450">
             <div class="system-content">
               <h3>Injection Waterproofing</h3>
               <p>Stop active leaks without demolition using PU, acrylic, and epoxy systems.</p>
