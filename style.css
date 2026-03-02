@@ -22,6 +22,26 @@ Text Domain: aqua-ingress-solutions
   --container-wide-max: 1320px;
 }
 
+@font-face {
+  font-family: "Mont";
+  src:
+    url("assets/fonts/mont/Mont-Bold.woff2") format("woff2"),
+    url("assets/fonts/mont/Mont-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mont";
+  src:
+    url("assets/fonts/mont/Mont-Black.woff2") format("woff2"),
+    url("assets/fonts/mont/Mont-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -42,13 +62,15 @@ h1,
 h2,
 h3 {
   margin: 0 0 0.65rem;
-  font-family: "Space Grotesk", "Public Sans", sans-serif;
+  font-family: "Mont", "Public Sans", sans-serif;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: clamp(2rem, 4.8vw, 4.1rem);
+  font-weight: 900;
 }
 
 h2 {
