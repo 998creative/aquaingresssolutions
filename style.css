@@ -1508,6 +1508,62 @@ img {
   background-image: url("assets/images/PHOTO-2025-12-05-05-59-39.jpg");
 }
 
+.page-injection-waterproofing {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5fd 38%, #f8fbff 100%);
+}
+
+.injection-hero {
+  background-image: url("assets/images/WhatsApp-Image-2025-12-05-at-06.27.37.jpeg");
+}
+
+.injection-overview-media {
+  background-image: url("assets/images/460216956_17895039831066458_5989938758620367973_n.jpg");
+}
+
+.injection-benefits-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.injection-app-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.injection-app-media--joints {
+  background-image: url("assets/images/473588673_122225153030149194_2905662229167176136_n.jpg");
+}
+
+.injection-app-media--cracks {
+  background-image: url("assets/images/465191560_17901068487066458_5940405231850142298_n-1.jpg");
+}
+
+.injection-app-media--pipes {
+  background-image: url("assets/images/427124688_17867932056066458_2484616918545213933_n.jpg");
+}
+
+.injection-app-media--lift {
+  background-image: url("assets/images/PHOTO-2025-12-05-06-16-35.jpg");
+}
+
+.injection-types {
+  background: #f4f9ff;
+}
+
+.injection-type-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.injection-type-grid .positive-tech-card {
+  min-height: 100%;
+}
+
+.injection-method-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.injection-page-cta {
+  background-image: url("assets/images/PHOTO-2025-12-05-06-27-35.jpg");
+}
+
 .cta-banner {
   position: relative;
   padding: clamp(3rem, 7vw, 6rem) 0;
@@ -1728,6 +1784,10 @@ body.menu-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .injection-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .positive-tech-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1736,11 +1796,23 @@ body.menu-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .injection-app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .injection-type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .positive-process-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .negative-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .injection-method-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1887,7 +1959,15 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .injection-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
   .torch-app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .injection-app-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1927,8 +2007,11 @@ body.menu-open {
   .process-grid,
   .positive-tech-grid,
   .torch-app-grid,
+  .injection-app-grid,
+  .injection-type-grid,
   .positive-process-grid,
   .negative-process-grid,
+  .injection-method-grid,
   .footer-grid,
   .feature-grid {
     grid-template-columns: 1fr;

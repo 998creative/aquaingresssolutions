@@ -113,6 +113,11 @@ function ais_torch_on_membranes_url()
     return ais_get_page_url('torch-on-membranes');
 }
 
+function ais_injection_waterproofing_url()
+{
+    return ais_get_page_url('injection-waterproofing');
+}
+
 function ais_home_section_url($section = '')
 {
     return ais_add_hash(home_url('/'), $section);
@@ -142,9 +147,11 @@ function ais_is_services_section()
     return is_page_template('page-positive-waterproofing.php')
         || is_page_template('page-negative-waterproofing.php')
         || is_page_template('page-torch-on-membranes.php')
+        || is_page_template('page-injection-waterproofing.php')
         || is_page('positive-waterproofing')
         || is_page('negative-waterproofing')
-        || is_page('torch-on-membranes');
+        || is_page('torch-on-membranes')
+        || is_page('injection-waterproofing');
 }
 
 function ais_body_classes($classes)
@@ -171,6 +178,10 @@ function ais_body_classes($classes)
 
     if (is_page_template('page-torch-on-membranes.php') || is_page('torch-on-membranes')) {
         $classes[] = 'page-torch-on-membranes';
+    }
+
+    if (is_page_template('page-injection-waterproofing.php') || is_page('injection-waterproofing')) {
+        $classes[] = 'page-injection-waterproofing';
     }
 
     return $classes;

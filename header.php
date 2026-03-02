@@ -15,6 +15,7 @@ $strata_url = ais_strata_url();
 $positive_url = ais_positive_waterproofing_url();
 $negative_url = ais_negative_waterproofing_url();
 $torch_on_url = ais_torch_on_membranes_url();
+$injection_url = ais_injection_waterproofing_url();
 $case_studies_url = ais_case_studies_url();
 $contact_url = ais_contact_url('contact-form');
 $is_case_studies = is_home() || is_singular('post');
@@ -61,6 +62,7 @@ $is_case_studies = is_home() || is_singular('post');
           <a href="<?php echo esc_url($positive_url); ?>"<?php echo (is_page_template('page-positive-waterproofing.php') || is_page('positive-waterproofing')) ? ' aria-current="page"' : ''; ?>>Positive Waterproofing</a>
           <a href="<?php echo esc_url($negative_url); ?>"<?php echo (is_page_template('page-negative-waterproofing.php') || is_page('negative-waterproofing')) ? ' aria-current="page"' : ''; ?>>Negative Waterproofing</a>
           <a href="<?php echo esc_url($torch_on_url); ?>"<?php echo (is_page_template('page-torch-on-membranes.php') || is_page('torch-on-membranes')) ? ' aria-current="page"' : ''; ?>>Torch-On Membranes</a>
+          <a href="<?php echo esc_url($injection_url); ?>"<?php echo (is_page_template('page-injection-waterproofing.php') || is_page('injection-waterproofing')) ? ' aria-current="page"' : ''; ?>>Injection Waterproofing</a>
         </div>
       </div>
       <a href="<?php echo esc_url($case_studies_url); ?>"<?php echo $is_case_studies ? ' aria-current="page"' : ''; ?>>Case Studies</a>
