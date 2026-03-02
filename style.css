@@ -2002,6 +2002,7 @@ body.menu-open {
   .injection-quality-grid,
   .strata-checklist,
   .strata-steps {
+    --mobile-slider-shadow: 0 12px 24px rgba(17, 45, 72, 0.11);
     display: grid;
     grid-template-columns: none;
     grid-auto-flow: column;
@@ -2012,8 +2013,11 @@ body.menu-open {
     overscroll-behavior-x: contain;
     scrollbar-width: thin;
     gap: 0.9rem;
-    padding-right: clamp(36px, 10vw, 92px);
+    margin-right: calc(50% - 50vw);
+    padding-left: 0.55rem;
+    padding-right: calc(clamp(36px, 10vw, 92px) + (50vw - 50%));
     padding-bottom: 2.4rem;
+    scroll-padding-left: 0.55rem;
     -webkit-mask-image: none;
     mask-image: none;
   }
@@ -2030,6 +2034,20 @@ body.menu-open {
   .strata-checklist > *,
   .strata-steps > * {
     scroll-snap-align: start;
+  }
+
+  .feature-grid > .feature-card,
+  .systems-grid > .system-card,
+  .process-grid > li,
+  .positive-tech-grid > .positive-tech-card,
+  .positive-process-grid > li,
+  .negative-process-grid > li,
+  .injection-method-grid > li,
+  .injection-type-grid > .positive-tech-card,
+  .injection-quality-grid > .feature-card,
+  .strata-checklist > li,
+  .strata-steps > .strata-step {
+    box-shadow: var(--mobile-slider-shadow);
   }
 
   .hero {
