@@ -2003,6 +2003,7 @@ body.menu-open {
   .strata-checklist,
   .strata-steps {
     display: grid;
+    grid-template-columns: none;
     grid-auto-flow: column;
     grid-auto-columns: minmax(84%, 1fr);
     overflow-x: auto;
