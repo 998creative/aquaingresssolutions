@@ -5,6 +5,8 @@
  * @package AquaIngressSolutions
  */
 
+$form_notice = function_exists('ais_get_contact_form_notice') ? ais_get_contact_form_notice() : null;
+
 get_header();
 ?>
   <main id="main-content">
@@ -73,6 +75,12 @@ get_header();
         <aside class="contact-panel" aria-label="Contact details and enquiry form">
           <h2>Contact Us</h2>
 
+          <?php if (is_array($form_notice) && !empty($form_notice['message'])) : ?>
+            <p class="form-notice form-notice--<?php echo esc_attr($form_notice['type']); ?>" role="<?php echo esc_attr($form_notice['role']); ?>">
+              <?php echo esc_html($form_notice['message']); ?>
+            </p>
+          <?php endif; ?>
+
           <ul class="contact-methods">
             <li>
               <span class="contact-icon" aria-hidden="true">
@@ -94,7 +102,12 @@ get_header();
 
           <p>We're proud to be the trusted choice for strata managers, engineers, and builders who rely on us for dependable leak repair and waterproofing results.</p>
 
-          <form class="contact-form" action="#" method="post">
+          <form class="contact-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+            <input type="hidden" name="action" value="ais_submit_contact_form">
+            <?php wp_nonce_field('ais_submit_contact_form', 'ais_contact_nonce'); ?>
+            <input class="contact-honeypot" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="ais_form_ts" value="<?php echo esc_attr(time()); ?>">
+
             <div class="form-field">
               <label for="name">Name <span aria-hidden="true">*</span></label>
               <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>

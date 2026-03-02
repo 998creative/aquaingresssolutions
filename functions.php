@@ -220,3 +220,133 @@ function ais_register_meta()
     );
 }
 add_action('init', 'ais_register_meta');
+
+function ais_allowed_enquiry_types()
+{
+    return array(
+        'Leak Investigation',
+        'Positive Waterproofing',
+        'Negative Waterproofing',
+        'Torch-on Membrane',
+        'Injection Waterproofing',
+        'Other',
+    );
+}
+
+function ais_contact_form_redirect_target($status = '')
+{
+    $url = ais_contact_url('contact-form');
+    if ($status === '') {
+        return $url;
+    }
+
+    return add_query_arg('contact_status', sanitize_key($status), $url);
+}
+
+function ais_get_contact_form_notice()
+{
+    $status = isset($_GET['contact_status']) ? sanitize_key((string) wp_unslash($_GET['contact_status'])) : '';
+    if ($status === '') {
+        return null;
+    }
+
+    if ($status === 'success') {
+        return array(
+            'type'    => 'success',
+            'role'    => 'status',
+            'message' => 'Thanks, your enquiry has been sent. We will get back to you shortly.',
+        );
+    }
+
+    if ($status === 'invalid') {
+        return array(
+            'type'    => 'error',
+            'role'    => 'alert',
+            'message' => 'Please complete all required fields and provide a valid email address.',
+        );
+    }
+
+    return array(
+        'type'    => 'error',
+        'role'    => 'alert',
+        'message' => 'Sorry, there was a problem sending your enquiry. Please try again or call us directly.',
+    );
+}
+
+function ais_handle_contact_form_submission()
+{
+    if (!isset($_SERVER['REQUEST_METHOD']) || strtoupper((string) $_SERVER['REQUEST_METHOD']) !== 'POST') {
+        wp_safe_redirect(ais_contact_form_redirect_target('error'));
+        exit;
+    }
+
+    $nonce = isset($_POST['ais_contact_nonce']) ? (string) wp_unslash($_POST['ais_contact_nonce']) : '';
+    if (!wp_verify_nonce($nonce, 'ais_submit_contact_form')) {
+        wp_safe_redirect(ais_contact_form_redirect_target('error'));
+        exit;
+    }
+
+    // Honeypot field should stay empty for human submissions.
+    $honeypot = isset($_POST['company_website']) ? trim((string) wp_unslash($_POST['company_website'])) : '';
+    if ($honeypot !== '') {
+        wp_safe_redirect(ais_contact_form_redirect_target('success'));
+        exit;
+    }
+
+    // Basic bot trap: reject submissions posted unrealistically fast.
+    $submitted_ts = isset($_POST['ais_form_ts']) ? absint($_POST['ais_form_ts']) : 0;
+    if ($submitted_ts > 0 && (time() - $submitted_ts) < 3) {
+        wp_safe_redirect(ais_contact_form_redirect_target('success'));
+        exit;
+    }
+
+    $name = isset($_POST['name']) ? trim(sanitize_text_field((string) wp_unslash($_POST['name']))) : '';
+    $email = isset($_POST['email']) ? sanitize_email((string) wp_unslash($_POST['email'])) : '';
+    $phone = isset($_POST['phone']) ? trim(sanitize_text_field((string) wp_unslash($_POST['phone']))) : '';
+    $enquiry_type = isset($_POST['enquiry_type']) ? sanitize_text_field((string) wp_unslash($_POST['enquiry_type'])) : '';
+    $message = isset($_POST['message']) ? trim(sanitize_textarea_field((string) wp_unslash($_POST['message']))) : '';
+
+    $phone_digits = preg_replace('/\D+/', '', $phone);
+    if (
+        $name === ''
+        || !is_email($email)
+        || $phone === ''
+        || strlen((string) $phone_digits) < 6
+        || !in_array($enquiry_type, ais_allowed_enquiry_types(), true)
+    ) {
+        wp_safe_redirect(ais_contact_form_redirect_target('invalid'));
+        exit;
+    }
+
+    $site_name = wp_specialchars_decode(get_bloginfo('name'), ENT_QUOTES);
+    $subject = sprintf('[%s] New Enquiry: %s', $site_name, $enquiry_type);
+
+    $body = "New website enquiry received.\n\n";
+    $body .= "Name: {$name}\n";
+    $body .= "Email: {$email}\n";
+    $body .= "Phone: {$phone}\n";
+    $body .= "Type of Enquiry: {$enquiry_type}\n\n";
+    $body .= "Message:\n";
+    $body .= ($message !== '' ? $message : 'No message provided.');
+    $body .= "\n\n";
+    $body .= "Submitted from: " . home_url('/') . "\n";
+
+    $recipient = apply_filters('ais_contact_form_recipient', get_option('admin_email'));
+    $recipient = sanitize_email((string) $recipient);
+    if (!is_email($recipient)) {
+        $recipient = sanitize_email((string) get_option('admin_email'));
+    }
+
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    $headers[] = sprintf('Reply-To: %s <%s>', $name, $email);
+
+    $sent = false;
+    if (is_email($recipient)) {
+        $sent = wp_mail($recipient, $subject, $body, $headers);
+    }
+
+    wp_safe_redirect(ais_contact_form_redirect_target($sent ? 'success' : 'error'));
+    exit;
+}
+add_action('admin_post_nopriv_ais_submit_contact_form', 'ais_handle_contact_form_submission');
+add_action('admin_post_ais_submit_contact_form', 'ais_handle_contact_form_submission');

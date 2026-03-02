@@ -880,6 +880,26 @@ img {
   margin-bottom: 0.85rem;
 }
 
+.form-notice {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.form-notice--success {
+  background: #e8f7ef;
+  border-color: #a9ddc0;
+  color: #1f6a3f;
+}
+
+.form-notice--error {
+  background: #fff0f0;
+  border-color: #f0b6b6;
+  color: #8b1f1f;
+}
+
 .contact-methods {
   list-style: none;
   margin: 0 0 0.9rem;
@@ -922,6 +942,15 @@ img {
 .contact-form {
   display: grid;
   gap: 0.85rem;
+}
+
+.contact-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .form-grid-two {
