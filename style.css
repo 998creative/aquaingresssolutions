@@ -2032,27 +2032,27 @@ body.menu-open {
   }
 
   .hero {
-    min-height: 62vh;
+    min-height: 54vh;
     padding-top: 7rem;
   }
 
   .contact-hero {
-    min-height: 44vh;
+    min-height: 36vh;
     padding-top: 7rem;
   }
 
   .about-hero {
-    min-height: 50vh;
+    min-height: 42vh;
     padding-top: 7rem;
   }
 
   .strata-hero {
-    min-height: 50vh;
+    min-height: 42vh;
     padding-top: 7rem;
   }
 
   .positive-hero {
-    min-height: 50vh;
+    min-height: 42vh;
     padding-top: 7rem;
   }
 
