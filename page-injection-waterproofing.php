@@ -187,22 +187,37 @@ get_header();
 
         <div class="feature-grid injection-quality-grid">
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M96 32C43 32 0 75 0 128v256c0 53 43 96 96 96h448c53 0 96-43 96-96V128c0-53-43-96-96-96H96zm32 96h384v256H128V128zm64 48v160h256V176H192z"/></svg>
+            </span>
             <h3>Experienced Technicians</h3>
             <p>Applied by trained personnel experienced in resin injection systems.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM192 384l-80-80 34-34 46 46 110-110 34 34-144 144z"/></svg>
+            </span>
             <h3>Approved Materials</h3>
             <p>Use of industry-approved products selected for project conditions.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M487.4 315.7l-42.2-24.4c2.7-14.9 2.7-30.4 0-45.3l42.2-24.4c7.4-4.3 10.8-13.2 8.3-21.3-11.3-36.8-30.6-70-55.8-97.2-5.6-6.1-14.5-7.5-21.7-3.4L376 123.9c-11.7-9.9-24.9-17.6-39.2-23.1V52.4c0-8.4-5.9-15.7-14.2-17.3-38.7-8.7-78.4-8.7-117.1 0-8.3 1.9-14.2 9-14.2 17.3v48.3c-14.3 5.4-27.5 13.2-39.2 23.1L93.8 99.7c-7.2-4.2-16.1-2.8-21.7 3.4C46.9 130.4 27.5 163.5 16.2 200.3c-2.5 8.1.9 17 8.3 21.3l42.2 24.4c-2.7 14.9-2.7 30.4 0 45.3l-42.2 24.4c-7.4 4.3-10.8 13.2-8.3 21.3 11.3 36.8 30.6 70 55.8 97.2 5.6 6.1 14.5 7.5 21.7 3.4l58.3-24.2c11.7 9.9 24.9 17.6 39.2 23.1v48.3c0 8.4 5.9 15.7 14.2 17.3 38.7 8.7 78.4 8.7 117.1 0 8.3-1.9 14.2-9 14.2-17.3v-48.3c14.3-5.4 27.5-13.2 39.2-23.1l58.3 24.2c7.2 4.2 16.1 2.8 21.7-3.4 25.2-27.2 44.5-60.3 55.8-97.2 2.5-8.1-.9-17-8.3-21.3zM264 336c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"/></svg>
+            </span>
             <h3>Controlled Procedures</h3>
             <p>Low-pressure injection protocols followed to protect substrate integrity.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7 14.3-32 32-32h176c17.7 0 32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v288c0 26.5-21.5 48-48 48H64c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h96V64zm48 32h144V80H208v16zm-64 128v64h224v-64H144zm0 128v64h160v-64H144z"/></svg>
+            </span>
             <h3>Post-Installation Documentation</h3>
             <p>Inspection and records provided as part of completion handover.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 0l192 80v144c0 133.6-82.4 252-192 288C146.4 476 64 357.6 64 224V80L256 0zm-32 352l144-144-45.3-45.3L224 261.5l-34.7-34.7L144 272l80 80z"/></svg>
+            </span>
             <h3>Warranty-Ready Delivery</h3>
             <p>Suitable for warranty-backed remedial scopes where specified.</p>
           </article>
