@@ -110,7 +110,8 @@ function ais_case_studies_url()
         return get_permalink($posts_page_id);
     }
 
-    return home_url('/case-studies/');
+    // Fallback to a standard posts query when a dedicated posts page isn't configured.
+    return home_url('/?post_type=post');
 }
 
 function ais_is_about_section()
