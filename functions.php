@@ -221,6 +221,32 @@ function ais_register_meta()
 }
 add_action('init', 'ais_register_meta');
 
+function ais_register_enquiry_post_type()
+{
+    register_post_type(
+        'ais_enquiry',
+        array(
+            'labels' => array(
+                'name'          => __('Enquiries', 'aqua-ingress-solutions'),
+                'singular_name' => __('Enquiry', 'aqua-ingress-solutions'),
+                'menu_name'     => __('Enquiries', 'aqua-ingress-solutions'),
+            ),
+            'public'             => false,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_position'      => 24,
+            'menu_icon'          => 'dashicons-email-alt',
+            'supports'           => array('title', 'editor'),
+            'exclude_from_search'=> true,
+            'publicly_queryable' => false,
+            'has_archive'        => false,
+            'rewrite'            => false,
+            'show_in_rest'       => false,
+        )
+    );
+}
+add_action('init', 'ais_register_enquiry_post_type');
+
 function ais_allowed_enquiry_types()
 {
     return array(
@@ -273,6 +299,84 @@ function ais_get_contact_form_notice()
     );
 }
 
+function ais_store_contact_submission($name, $email, $phone, $enquiry_type, $message)
+{
+    $post_title = sprintf(
+        '%s - %s (%s)',
+        $name,
+        $enquiry_type,
+        wp_date('Y-m-d H:i')
+    );
+
+    $post_content = "Email: {$email}\n";
+    $post_content .= "Phone: {$phone}\n";
+    $post_content .= "Type: {$enquiry_type}\n\n";
+    $post_content .= "Message:\n";
+    $post_content .= ($message !== '' ? $message : 'No message provided.');
+
+    $submission_id = wp_insert_post(
+        array(
+            'post_type'    => 'ais_enquiry',
+            'post_status'  => 'publish',
+            'post_title'   => $post_title,
+            'post_content' => $post_content,
+        ),
+        true
+    );
+
+    if ($submission_id instanceof WP_Error) {
+        return $submission_id;
+    }
+
+    update_post_meta($submission_id, 'ais_enquiry_name', $name);
+    update_post_meta($submission_id, 'ais_enquiry_email', $email);
+    update_post_meta($submission_id, 'ais_enquiry_phone', $phone);
+    update_post_meta($submission_id, 'ais_enquiry_type', $enquiry_type);
+    update_post_meta($submission_id, 'ais_enquiry_message', $message);
+
+    return $submission_id;
+}
+
+function ais_enquiry_admin_columns($columns)
+{
+    $reordered = array();
+    $reordered['cb'] = $columns['cb'];
+    $reordered['title'] = __('Enquiry', 'aqua-ingress-solutions');
+    $reordered['ais_enquiry_email'] = __('Email', 'aqua-ingress-solutions');
+    $reordered['ais_enquiry_phone'] = __('Phone', 'aqua-ingress-solutions');
+    $reordered['ais_enquiry_type'] = __('Type', 'aqua-ingress-solutions');
+    $reordered['date'] = $columns['date'];
+    return $reordered;
+}
+add_filter('manage_ais_enquiry_posts_columns', 'ais_enquiry_admin_columns');
+
+function ais_enquiry_admin_column_content($column, $post_id)
+{
+    if ($column === 'ais_enquiry_email') {
+        $email = get_post_meta($post_id, 'ais_enquiry_email', true);
+        if (!empty($email)) {
+            printf('<a href="mailto:%1$s">%1$s</a>', esc_attr($email));
+        }
+        return;
+    }
+
+    if ($column === 'ais_enquiry_phone') {
+        $phone = get_post_meta($post_id, 'ais_enquiry_phone', true);
+        if (!empty($phone)) {
+            echo esc_html($phone);
+        }
+        return;
+    }
+
+    if ($column === 'ais_enquiry_type') {
+        $type = get_post_meta($post_id, 'ais_enquiry_type', true);
+        if (!empty($type)) {
+            echo esc_html($type);
+        }
+    }
+}
+add_action('manage_ais_enquiry_posts_custom_column', 'ais_enquiry_admin_column_content', 10, 2);
+
 function ais_handle_contact_form_submission()
 {
     if (!isset($_SERVER['REQUEST_METHOD']) || strtoupper((string) $_SERVER['REQUEST_METHOD']) !== 'POST') {
@@ -321,6 +425,8 @@ function ais_handle_contact_form_submission()
     $site_name = wp_specialchars_decode(get_bloginfo('name'), ENT_QUOTES);
     $subject = sprintf('[%s] New Enquiry: %s', $site_name, $enquiry_type);
 
+    $submission_saved = ais_store_contact_submission($name, $email, $phone, $enquiry_type, $message);
+
     $body = "New website enquiry received.\n\n";
     $body .= "Name: {$name}\n";
     $body .= "Email: {$email}\n";
@@ -345,7 +451,8 @@ function ais_handle_contact_form_submission()
         $sent = wp_mail($recipient, $subject, $body, $headers);
     }
 
-    wp_safe_redirect(ais_contact_form_redirect_target($sent ? 'success' : 'error'));
+    $is_saved = !($submission_saved instanceof WP_Error);
+    wp_safe_redirect(ais_contact_form_redirect_target(($sent || $is_saved) ? 'success' : 'error'));
     exit;
 }
 add_action('admin_post_nopriv_ais_submit_contact_form', 'ais_handle_contact_form_submission');
