@@ -53,22 +53,23 @@ Install it on the live site to let WordPress pull theme updates directly from th
 
 ## Direct Push Deploy (No Manual Updates)
 
-This repo now includes a GitHub Action:
+This repo includes:
 
-- `.github/workflows/deploy-theme.yml`
+- GitHub Action: `.github/workflows/pp-theme-deploy.yml`
+- WordPress plugin: `plugin/pp-theme-deploy/pp-theme-deploy.php`
 
-On every push to `main`, it deploys the theme files directly to your live server via `rsync` over SSH.
+How it works:
 
-Add these GitHub repository secrets:
+1. GitHub Action zips the theme on every push to `main`.
+2. Action POSTs the zip to your live WP endpoint.
+3. `PP Theme Deploy` plugin validates the token and swaps theme files in place.
 
-- `LIVE_SSH_HOST`: server hostname
-- `LIVE_SSH_USER`: SSH user
-- `LIVE_SSH_PRIVATE_KEY`: private key for that user
-- `LIVE_THEME_PATH`: absolute path to `wp-content/themes/aquaingresssolutions`
-- `LIVE_SSH_PORT` (optional): defaults to `22`
-- `LIVE_SSH_KNOWN_HOSTS` (optional): full known_hosts line(s)
+GitHub repository secrets required:
 
-After secrets are set, every commit you push to `main` deploys automatically.
+- `PP_DEPLOY_ENDPOINT` (from `Settings -> PP Theme Deploy`, e.g. `https://your-site.com/wp-json/pp-theme-deploy/v1/deploy`)
+- `PP_DEPLOY_TOKEN` (from `Settings -> PP Theme Deploy`)
+
+This flow avoids FTP/SSH credential rotation issues common on Elementor Hosting.
 
 ## Notes
 

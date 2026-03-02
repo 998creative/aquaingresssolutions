@@ -1,0 +1,49 @@
+name: PP Theme Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pp-theme-deploy-live
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        run: |
+          test -n "${{ secrets.PP_DEPLOY_ENDPOINT }}"
+          test -n "${{ secrets.PP_DEPLOY_TOKEN }}"
+
+      - name: Build theme zip
+        run: |
+          set -eu
+          zip -r theme.zip . \
+            -x ".git/*" \
+               ".github/*" \
+               ".DS_Store" \
+               "**/.DS_Store" \
+               "plugin/*" \
+               "*.zip"
+
+      - name: Push theme zip to live site
+        env:
+          DEPLOY_ENDPOINT: ${{ secrets.PP_DEPLOY_ENDPOINT }}
+          DEPLOY_TOKEN: ${{ secrets.PP_DEPLOY_TOKEN }}
+          THEME_SLUG: aquaingresssolutions
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          curl --fail-with-body -sS -X POST "$DEPLOY_ENDPOINT" \
+            -H "X-PP-Deploy-Token: $DEPLOY_TOKEN" \
+            -F "theme_slug=$THEME_SLUG" \
+            -F "commit_sha=$COMMIT_SHA" \
+            -F "theme_zip=@theme.zip;type=application/zip"
