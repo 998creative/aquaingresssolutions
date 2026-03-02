@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: PP Theme Deploy
- * Description: Receives a theme zip from GitHub Actions and deploys it to wp-content/themes.
+ * Plugin Name: Theme Deploy
+ * Description: Bespoke plugin to update theme directly from GitHub Repo
  * Version: 1.0.0
- * Author: 998 Creative
+ * Author: 998
  * License: GPL-2.0+
  *
  * @package PPThemeDeploy
@@ -241,8 +241,8 @@ final class PP_Theme_Deploy
     public function register_settings_page(): void
     {
         add_options_page(
-            __('PP Theme Deploy', 'pp-theme-deploy'),
-            __('PP Theme Deploy', 'pp-theme-deploy'),
+            __('Theme Deploy', 'pp-theme-deploy'),
+            __('Theme Deploy', 'pp-theme-deploy'),
             'manage_options',
             'pp-theme-deploy',
             array($this, 'render_settings_page')
@@ -261,7 +261,7 @@ final class PP_Theme_Deploy
         $last_commit = (string) get_option(self::OPTION_LAST_COMMIT, '');
         ?>
         <div class="wrap">
-          <h1>PP Theme Deploy</h1>
+          <h1>Theme Deploy</h1>
           <p>Use this endpoint + token in GitHub Actions secrets.</p>
           <table class="form-table" role="presentation">
             <tr>
