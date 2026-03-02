@@ -43,26 +43,44 @@ get_header();
 
         <div class="feature-grid positive-use-grid torch-benefits-grid">
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M320 96L160 256h96v160h128V256h96L320 96zm288 256h-64v96H96v-96H32v128c0 17.7 14.3 32 32 32h512c17.7 0 32-14.3 32-32V352z"/></svg>
+            </span>
             <h3>Durability in Exposed Environments</h3>
             <p>Excellent resistance to weathering across external roof and deck surfaces.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M544 192h-16L408 56a24 24 0 0 0-18-8H250a24 24 0 0 0-19 9L107 192H96c-53 0-96 43-96 96v64c0 18 14 32 32 32h32a96 96 0 0 0 192 0h128a96 96 0 0 0 192 0h32c18 0 32-14 32-32v-64c0-53-43-96-96-96zM160 416a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96z"/></svg>
+            </span>
             <h3>Mechanical Strength</h3>
             <p>High resistance to foot traffic and routine service access.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 32c-70.7 0-128 57.3-128 128 0 63.2 91.5 201.4 117.7 239.6 5.1 7.4 15.5 7.4 20.6 0C292.5 361.4 384 223.2 384 160c0-70.7-57.3-128-128-128zm0 176a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 432c-17.7 0-32 14.3-32 32v16h384v-16c0-17.7-14.3-32-32-32H96z"/></svg>
+            </span>
             <h3>UV-Stable Cap Sheets</h3>
             <p>Protective top layers available for prolonged sunlight exposure.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M208 0h224a48 48 0 0 1 48 48v48h64a32 32 0 0 1 32 32v352a32 32 0 0 1-32 32H96a32 32 0 0 1-32-32V128a32 32 0 0 1 32-32h64V48a48 48 0 0 1 48-48zm16 96h192V64H224v32z"/></svg>
+            </span>
             <h3>Suitable for New and Remedial Works</h3>
             <p>Effective for both new build construction and waterproofing upgrades.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M96 32h384c53 0 96 43 96 96v256c0 53-43 96-96 96H96c-53 0-96-43-96-96V128c0-53 43-96 96-96zm80 128v64h224v-64H176zm0 128v64h144v-64H176z"/></svg>
+            </span>
             <h3>Roof System Compatibility</h3>
             <p>Compatible with insulated and inverted roof build-ups where required.</p>
           </article>
           <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 0l192 80v144c0 133.6-82.4 252-192 288C146.4 476 64 357.6 64 224V80L256 0zm-32 352l144-144-45.3-45.3L224 261.5l-34.7-34.7L144 272l80 80z"/></svg>
+            </span>
             <h3>Warranty Pathways</h3>
             <p>Manufacturer-backed warranty options available subject to specification and compliance.</p>
           </article>
