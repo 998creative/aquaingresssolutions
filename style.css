@@ -1254,6 +1254,150 @@ img {
     center/cover no-repeat;
 }
 
+.page-positive-waterproofing {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5fd 38%, #f8fbff 100%);
+}
+
+.positive-hero {
+  min-height: min(60vh, 760px);
+  padding-top: 8.5rem;
+  background: #0f2a44
+    url("assets/images/PHOTO-2025-12-05-06-16-35.jpg") center/cover no-repeat;
+}
+
+.page-positive-waterproofing .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(10, 28, 45, 0.88), rgba(15, 37, 59, 0.56) 58%, rgba(14, 35, 57, 0.78));
+}
+
+.positive-overview {
+  padding-top: clamp(2.7rem, 6vw, 5rem);
+}
+
+.positive-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.2rem, 2.6vw, 2rem);
+  align-items: center;
+}
+
+.positive-overview-media {
+  min-height: 520px;
+  border-radius: 24px;
+  border: 1px solid #d7e4f4;
+  box-shadow: 0 16px 34px rgba(18, 45, 74, 0.12);
+  background: #173450
+    url("assets/images/PHOTO-2025-12-05-05-43-13.jpg") center/cover no-repeat;
+}
+
+.positive-use-cases {
+  background: #142235;
+}
+
+.positive-use-cases h2,
+.positive-use-cases h3,
+.positive-use-cases p {
+  color: #f0f7ff;
+}
+
+.positive-use-grid .feature-card {
+  text-align: left;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.97), rgba(240, 247, 255, 0.98));
+  border-color: #cad9ec;
+}
+
+.positive-use-grid .feature-card h3 {
+  color: var(--ink);
+}
+
+.positive-use-grid .feature-card p {
+  color: var(--muted);
+}
+
+.positive-technologies {
+  background: #f4f9ff;
+}
+
+.positive-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.positive-tech-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d6e3f2;
+  box-shadow: 0 12px 28px rgba(17, 45, 72, 0.1);
+}
+
+.positive-tech-media {
+  min-height: 180px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.positive-tech-media--bitumen {
+  background-image: url("assets/images/473588673_122225153030149194_2905662229167176136_n.jpg");
+}
+
+.positive-tech-media--liquid {
+  background-image: url("assets/images/460216956_17895039831066458_5989938758620367973_n.jpg");
+}
+
+.positive-tech-media--sheet {
+  background-image: url("assets/images/465191560_17901068487066458_5940405231850142298_n-1.jpg");
+}
+
+.positive-tech-content {
+  padding: 1.05rem 1.1rem 1.2rem;
+}
+
+.positive-tech-content h3 {
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+}
+
+.positive-tech-content ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.42rem;
+}
+
+.positive-process {
+  background: linear-gradient(180deg, #edf5ff 0%, #f7fbff 100%);
+}
+
+.positive-process-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.positive-process-grid li {
+  border: 1px solid #d7e3f3;
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.positive-benefits {
+  background: #fff;
+}
+
+.positive-page-cta {
+  background: #1b3551
+    url("assets/images/PHOTO-2025-12-05-06-38-38.jpg")
+    center/cover no-repeat;
+}
+
 .cta-banner {
   position: relative;
   padding: clamp(3rem, 7vw, 6rem) 0;
@@ -1462,6 +1606,18 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .positive-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .positive-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .positive-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .strata-partner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1472,6 +1628,10 @@ body.menu-open {
 
   .about-intro-media {
     min-height: 380px;
+  }
+
+  .positive-overview-media {
+    min-height: 340px;
   }
 
   .accredit-grid {
@@ -1584,6 +1744,11 @@ body.menu-open {
     padding-top: 7rem;
   }
 
+  .positive-hero {
+    min-height: 50vh;
+    padding-top: 7rem;
+  }
+
   .strata-partner-grid {
     grid-template-columns: 1fr;
   }
@@ -1618,6 +1783,8 @@ body.menu-open {
 
   .systems-grid,
   .process-grid,
+  .positive-tech-grid,
+  .positive-process-grid,
   .footer-grid,
   .feature-grid {
     grid-template-columns: 1fr;

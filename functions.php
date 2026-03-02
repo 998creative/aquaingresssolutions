@@ -98,6 +98,11 @@ function ais_strata_url()
     return ais_get_page_url('strata-building-manager-support');
 }
 
+function ais_positive_waterproofing_url()
+{
+    return ais_get_page_url('positive-waterproofing');
+}
+
 function ais_home_section_url($section = '')
 {
     return ais_add_hash(home_url('/'), $section);
@@ -122,6 +127,12 @@ function ais_is_about_section()
         || is_page('strata-building-manager-support');
 }
 
+function ais_is_services_section()
+{
+    return is_page_template('page-positive-waterproofing.php')
+        || is_page('positive-waterproofing');
+}
+
 function ais_body_classes($classes)
 {
     if (is_page_template('page-about.php') || is_page('about')) {
@@ -134,6 +145,10 @@ function ais_body_classes($classes)
 
     if (is_page_template('page-strata-building-manager-support.php') || is_page('strata-building-manager-support')) {
         $classes[] = 'page-strata';
+    }
+
+    if (is_page_template('page-positive-waterproofing.php') || is_page('positive-waterproofing')) {
+        $classes[] = 'page-positive-waterproofing';
     }
 
     return $classes;
