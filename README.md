@@ -51,6 +51,25 @@ A companion plugin is included here:
 
 Install it on the live site to let WordPress pull theme updates directly from this GitHub repo.
 
+## Direct Push Deploy (No Manual Updates)
+
+This repo now includes a GitHub Action:
+
+- `.github/workflows/deploy-theme.yml`
+
+On every push to `main`, it deploys the theme files directly to your live server via `rsync` over SSH.
+
+Add these GitHub repository secrets:
+
+- `LIVE_SSH_HOST`: server hostname
+- `LIVE_SSH_USER`: SSH user
+- `LIVE_SSH_PRIVATE_KEY`: private key for that user
+- `LIVE_THEME_PATH`: absolute path to `wp-content/themes/aquaingresssolutions`
+- `LIVE_SSH_PORT` (optional): defaults to `22`
+- `LIVE_SSH_KNOWN_HOSTS` (optional): full known_hosts line(s)
+
+After secrets are set, every commit you push to `main` deploys automatically.
+
 ## Notes
 
 - Header/footer/navigation are built directly in theme templates.
