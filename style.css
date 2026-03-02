@@ -2133,9 +2133,13 @@ body.menu-open {
     display: none;
   }
 
+  .studies-carousel {
+    margin-right: calc(50% - 50vw);
+  }
+
   .studies-track {
     grid-auto-columns: minmax(94%, 1fr);
-    padding-right: 0;
+    padding-right: calc(clamp(24px, 8vw, 48px) + (50vw - 50%));
     -webkit-mask-image: none;
     mask-image: none;
   }
