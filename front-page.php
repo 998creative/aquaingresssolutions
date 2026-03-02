@@ -92,7 +92,7 @@ get_header();
             <div class="system-content">
               <h3>Negative Waterproofing</h3>
               <p>Internal protection for basements, plant rooms, and inaccessible structures.</p>
-              <a href="<?php echo esc_url(ais_contact_url('contact-form')); ?>" class="text-link">Learn More</a>
+              <a href="<?php echo esc_url(ais_negative_waterproofing_url()); ?>" class="text-link">Learn More</a>
             </div>
           </article>
 

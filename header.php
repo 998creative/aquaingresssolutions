@@ -13,6 +13,7 @@ $home_url = ais_home_section_url('home');
 $about_url = ais_about_url();
 $strata_url = ais_strata_url();
 $positive_url = ais_positive_waterproofing_url();
+$negative_url = ais_negative_waterproofing_url();
 $case_studies_url = ais_case_studies_url();
 $contact_url = ais_contact_url('contact-form');
 $is_case_studies = is_home() || is_singular('post');
@@ -57,6 +58,7 @@ $is_case_studies = is_home() || is_singular('post');
         </button>
         <div class="dropdown-menu" id="services-nav-menu">
           <a href="<?php echo esc_url($positive_url); ?>"<?php echo (is_page_template('page-positive-waterproofing.php') || is_page('positive-waterproofing')) ? ' aria-current="page"' : ''; ?>>Positive Waterproofing</a>
+          <a href="<?php echo esc_url($negative_url); ?>"<?php echo (is_page_template('page-negative-waterproofing.php') || is_page('negative-waterproofing')) ? ' aria-current="page"' : ''; ?>>Negative Waterproofing</a>
         </div>
       </div>
       <a href="<?php echo esc_url($case_studies_url); ?>"<?php echo $is_case_studies ? ' aria-current="page"' : ''; ?>>Case Studies</a>

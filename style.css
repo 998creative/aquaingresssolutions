@@ -1398,6 +1398,42 @@ img {
     center/cover no-repeat;
 }
 
+.page-negative-waterproofing {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5fd 38%, #f8fbff 100%);
+}
+
+.negative-hero {
+  background-image: url("assets/images/WhatsApp-Image-2025-12-05-at-06.15.26-2.jpeg");
+}
+
+.negative-overview-media {
+  background-image: url("assets/images/WhatsApp-Image-2025-12-05-at-06.09.41-4.jpeg");
+}
+
+.negative-use-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.negative-tech-media--crystalline {
+  background-image: url("assets/images/460216956_17895039831066458_5989938758620367973_n.jpg");
+}
+
+.negative-tech-media--flexible {
+  background-image: url("assets/images/465191560_17901068487066458_5940405231850142298_n-1.jpg");
+}
+
+.negative-tech-media--sealant {
+  background-image: url("assets/images/473588673_122225153030149194_2905662229167176136_n.jpg");
+}
+
+.negative-process-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.negative-page-cta {
+  background-image: url("assets/images/PHOTO-2025-12-05-06-27-35.jpg");
+}
+
 .cta-banner {
   position: relative;
   padding: clamp(3rem, 7vw, 6rem) 0;
@@ -1610,12 +1646,20 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .negative-use-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .positive-tech-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .positive-process-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .negative-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .strata-partner-grid {
@@ -1749,6 +1793,10 @@ body.menu-open {
     padding-top: 7rem;
   }
 
+  .negative-use-grid {
+    grid-template-columns: 1fr;
+  }
+
   .strata-partner-grid {
     grid-template-columns: 1fr;
   }
@@ -1785,6 +1833,7 @@ body.menu-open {
   .process-grid,
   .positive-tech-grid,
   .positive-process-grid,
+  .negative-process-grid,
   .footer-grid,
   .feature-grid {
     grid-template-columns: 1fr;
