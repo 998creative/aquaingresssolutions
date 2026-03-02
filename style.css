@@ -1102,7 +1102,7 @@ img {
 }
 
 .strata-hero {
-  min-height: min(72vh, 840px);
+  min-height: min(60vh, 760px);
   padding-top: 8.5rem;
   background: #0f2a44
     url("assets/images/WhatsApp-Image-2025-12-05-at-05.38.21.jpeg") center/cover
@@ -1580,7 +1580,7 @@ body.menu-open {
   }
 
   .strata-hero {
-    min-height: 60vh;
+    min-height: 50vh;
     padding-top: 7rem;
   }
 
