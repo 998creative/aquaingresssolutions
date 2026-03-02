@@ -1434,6 +1434,75 @@ img {
   background-image: url("assets/images/PHOTO-2025-12-05-06-27-35.jpg");
 }
 
+.page-torch-on-membranes {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5fd 38%, #f8fbff 100%);
+}
+
+.torch-hero {
+  background-image: url("assets/images/waterproofing-7508362-scaled.jpg");
+}
+
+.torch-overview-media {
+  background-image: url("assets/images/473588673_122225153030149194_2905662229167176136_n.jpg");
+}
+
+.torch-benefits-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.torch-app-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.torch-app-media--roof {
+  background-image: url("assets/images/427124688_17867932056066458_2484616918545213933_n.jpg");
+}
+
+.torch-app-media--balcony {
+  background-image: url("assets/images/465191560_17901068487066458_5940405231850142298_n-1.jpg");
+}
+
+.torch-app-media--podium {
+  background-image: url("assets/images/PHOTO-2025-12-05-05-43-13.jpg");
+}
+
+.torch-app-media--plant {
+  background-image: url("assets/images/460216956_17895039831066458_5989938758620367973_n.jpg");
+}
+
+.torch-brands {
+  background: #142235;
+}
+
+.torch-brands h2,
+.torch-brands p {
+  color: #eff6ff;
+}
+
+.torch-brand-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.torch-brand-list li {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  padding: 1rem 0.9rem;
+  text-align: center;
+  color: #eff6ff;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.torch-page-cta {
+  background-image: url("assets/images/PHOTO-2025-12-05-05-59-39.jpg");
+}
+
 .cta-banner {
   position: relative;
   padding: clamp(3rem, 7vw, 6rem) 0;
@@ -1650,7 +1719,15 @@ body.menu-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .torch-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .positive-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .torch-app-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1676,6 +1753,10 @@ body.menu-open {
 
   .positive-overview-media {
     min-height: 340px;
+  }
+
+  .torch-brand-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .accredit-grid {
@@ -1797,6 +1878,14 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .torch-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .torch-app-grid {
+    grid-template-columns: 1fr;
+  }
+
   .strata-partner-grid {
     grid-template-columns: 1fr;
   }
@@ -1832,10 +1921,15 @@ body.menu-open {
   .systems-grid,
   .process-grid,
   .positive-tech-grid,
+  .torch-app-grid,
   .positive-process-grid,
   .negative-process-grid,
   .footer-grid,
   .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .torch-brand-list {
     grid-template-columns: 1fr;
   }
 

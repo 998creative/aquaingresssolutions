@@ -101,7 +101,7 @@ get_header();
             <div class="system-content">
               <h3>Torch-On Membranes</h3>
               <p>Trafficable, two-layer torch-on systems with up to 20-year warranty.</p>
-              <a href="<?php echo esc_url(ais_contact_url('contact-form')); ?>" class="text-link">Learn More</a>
+              <a href="<?php echo esc_url(ais_torch_on_membranes_url()); ?>" class="text-link">Learn More</a>
             </div>
           </article>
 
