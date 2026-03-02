@@ -1991,6 +1991,45 @@ body.menu-open {
     white-space: normal;
   }
 
+  .feature-grid,
+  .systems-grid,
+  .process-grid,
+  .positive-tech-grid,
+  .positive-process-grid,
+  .negative-process-grid,
+  .injection-method-grid,
+  .injection-type-grid,
+  .injection-quality-grid,
+  .strata-checklist,
+  .strata-steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(84%, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    gap: 0.9rem;
+    padding-right: clamp(36px, 10vw, 92px);
+    padding-bottom: 0.55rem;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .feature-grid > *,
+  .systems-grid > *,
+  .process-grid > *,
+  .positive-tech-grid > *,
+  .positive-process-grid > *,
+  .negative-process-grid > *,
+  .injection-method-grid > *,
+  .injection-type-grid > *,
+  .injection-quality-grid > *,
+  .strata-checklist > *,
+  .strata-steps > * {
+    scroll-snap-align: start;
+  }
+
   .hero {
     min-height: 62vh;
     padding-top: 7rem;
@@ -2016,32 +2055,8 @@ body.menu-open {
     padding-top: 7rem;
   }
 
-  .negative-use-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .torch-benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .injection-benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .torch-app-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .injection-app-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .injection-quality-grid {
-    grid-template-columns: 1fr;
-  }
-
   .strata-partner-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .strata-step h3 br {
@@ -2053,7 +2068,7 @@ body.menu-open {
   }
 
   .accredit-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-panel {
@@ -2072,22 +2087,12 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
-  .systems-grid,
-  .process-grid,
-  .positive-tech-grid,
-  .torch-app-grid,
-  .injection-app-grid,
-  .injection-type-grid,
-  .positive-process-grid,
-  .negative-process-grid,
-  .injection-method-grid,
-  .footer-grid,
-  .feature-grid {
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
   .torch-brand-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .quotes-grid {
