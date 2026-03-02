@@ -206,8 +206,9 @@ img {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 0;
+  z-index: 260;
   min-width: 290px;
   display: grid;
   gap: 0.2rem;
