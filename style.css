@@ -1454,6 +1454,11 @@ img {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.torch-app-grid .positive-tech-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .torch-app-media--roof {
   background-image: url("assets/images/427124688_17867932056066458_2484616918545213933_n.jpg");
 }
