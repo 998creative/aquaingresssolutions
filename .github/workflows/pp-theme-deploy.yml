@@ -20,8 +20,8 @@ jobs:
 
       - name: Validate required secrets
         run: |
-          test -n "${{ secrets.PP_DEPLOY_ENDPOINT }}"
-          test -n "${{ secrets.PP_DEPLOY_TOKEN }}"
+          test -n "${{ secrets.WP_DEPLOY_URL }}"
+          test -n "${{ secrets.WP_DEPLOY_TOKEN }}"
 
       - name: Build theme zip
         run: |
@@ -36,8 +36,8 @@ jobs:
 
       - name: Push theme zip to live site
         env:
-          DEPLOY_ENDPOINT: ${{ secrets.PP_DEPLOY_ENDPOINT }}
-          DEPLOY_TOKEN: ${{ secrets.PP_DEPLOY_TOKEN }}
+          DEPLOY_ENDPOINT: ${{ secrets.WP_DEPLOY_URL }}
+          DEPLOY_TOKEN: ${{ secrets.WP_DEPLOY_TOKEN }}
           THEME_SLUG: aquaingresssolutions
           COMMIT_SHA: ${{ github.sha }}
         run: |
