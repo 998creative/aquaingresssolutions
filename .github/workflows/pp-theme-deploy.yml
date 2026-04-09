@@ -43,7 +43,7 @@ jobs:
         run: |
           set -eu
           curl --fail-with-body -sS -X POST "$DEPLOY_ENDPOINT" \
-            -H "X-PP-Deploy-Token: $DEPLOY_TOKEN" \
+            -H "x-wp-deploy-token: $DEPLOY_TOKEN" \
             -F "theme_slug=$THEME_SLUG" \
             -F "commit_sha=$COMMIT_SHA" \
             -F "theme_zip=@theme.zip;type=application/zip"
